@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: msserver1
+  labels:
+    app: msserver1
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 4545
+    targetPort: 4545
+  selector:
+    app: msserver1
+  # type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: msserver1
+  name: msserver1
+spec:
+  selector:
+    matchLabels:
+      app: msserver1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: msserver1
+      name: msserver1
+    spec:
+      tolerations:
+      - key: "os"
+        value: "Windows"
+        Effect: "NoSchedule"
+      containers:
+      - name: windowswebserver
+        image: dyangcht/msserver1:latest
+        imagePullPolicy: IfNotPresent
+        # command:
+        # - powershell.exe
+        # - -command
+        # - $listener = New-Object System.Net.HttpListener; $listener.Prefixes.Add('http://*:80/'); $listener.Start();Write-Host('Listening at http://*:80/'); while ($listener.IsListening) { $context = $listener.GetContext(); $response = $context.Response; $content='<html><body><H1>Windows Container Web Server</H1></body></html>'; $buffer = [System.Text.Encoding]::UTF8.GetBytes($content); $response.ContentLength64 = $buffer.Length; $response.OutputStream.Write($buffer, 0, $buffer.Length); $response.Close(); };
+      nodeSelector:
+        beta.kubernetes.io/os: windows
