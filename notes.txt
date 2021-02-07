@@ -1,0 +1,11 @@
+git config --global user.email "dyangcht@aim.com"
+git config --global user.name "David Yang"
+git config --global credential.username "dyangcht"
+
+git credential fill <ENTER>
+protocol=https<ENTER>
+host=github.com<ENTER>
+<ENTER>
+It will prompt a window to ask for auth token
+
+
