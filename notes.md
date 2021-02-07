@@ -17,5 +17,6 @@ It will prompt a window to ask for auth token
 
 ### Check the OAuth scope
 
-```curl -H "Authorization: token 88d58291e4b52e9eb155652482b50ec75ea24f96" https://api.github.com/users/dyangcht -I
-
+```
+curl -H "Authorization: token 88d58291e4b52e9eb155652482b50ec75ea24f96" https://api.github.com/users/dyangcht -I
+```
