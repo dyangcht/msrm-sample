@@ -60,7 +60,7 @@ namespace ServerApplication
                         coldata = coldata.TrimEnd();
                         outstr += coldata + ",";
                     }
-                    Console.WriteLine("R: "+ outstr);
+                    Console.WriteLine("Result: "+ outstr);
                 }
             } catch (Exception es) {  
                 Console.WriteLine("[Error WITH DB CONNECT...] " + es.Message);  
