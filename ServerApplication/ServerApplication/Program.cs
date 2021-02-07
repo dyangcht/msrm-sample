@@ -16,8 +16,8 @@ namespace ServerApplication
         // private static readonly AutoResetEvent autoRestEvent = new AutoResetEvent(false);
         // private static readonly Service _service = new Service();
 
-        private SqlConnection myConnection = null;
-        private SqlDataReader myReader;
+        private static SqlConnection myConnection = null;
+        private static SqlDataReader myReader;
         public static void Main()
         {
             // _service.OnMessageRecieved = OnMessage_Received;
@@ -40,7 +40,7 @@ namespace ServerApplication
                     return;  
                 }
                 Console.WriteLine("EXECUTING .. " + sqlCmd);
-                SqlCommand myCmd = SqlCommand(sqlCmd);
+                SqlCommand myCmd = new SqlCommand(sqlCmd);
                 if (myCmd == null) {
                     Console.WriteLine("NULL VALUE...");
                 } else {
@@ -49,7 +49,7 @@ namespace ServerApplication
                     myReader = myCmd.ExecuteReader();
                     if (!myReader.Read()) {  
                         myReader.Close();  
-                        return "";  
+                        //return "";  
                     }
                     int nCol = myReader.FieldCount;
                     string outstr = "";
@@ -59,8 +59,8 @@ namespace ServerApplication
                         string coldata = values[i].ToString();
                         coldata = coldata.TrimEnd();
                         outstr += coldata + ",";
-                    }  
-                    return outstr;
+                    }
+                    Console.WriteLine("R: "+ outstr);
                 }
             } catch (Exception es) {  
                 Console.WriteLine("[Error WITH DB CONNECT...] " + es.Message);  
