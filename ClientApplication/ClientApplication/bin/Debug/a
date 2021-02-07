@@ -1,0 +1,189 @@
+[
+    {
+        "Id": "d12888f7813d74fe4e80e94bd39f1f997dab623f3c21cb97b95da58020fbb3f4",
+        "Created": "2021-01-31T08:36:59.9609526Z",
+        "Path": "ServerApplication.exe",
+        "Args": [
+            "-p",
+            "4545:4545",
+            "-d"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1328,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2021-01-31T08:37:02.7439802Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:257ce0d5b4ab3f15a2491e3e3128ba374875b8a3307e16d933b8126e1e0a9dc4",
+        "ResolvConfPath": "",
+        "HostnamePath": "",
+        "HostsPath": "",
+        "LogPath": "C:\\ProgramData\\Docker\\containers\\d12888f7813d74fe4e80e94bd39f1f997dab623f3c21cb97b95da58020fbb3f4\\d12888f7813d74fe4e80e94bd39f1f997dab623f3c21cb97b95da58020fbb3f4-json.log",
+        "Name": "/test",
+        "RestartCount": 0,
+        "Driver": "windowsfilter",
+        "Platform": "windows",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": true,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 0,
+            "ConsoleSize": [
+                30,
+                120
+            ],
+            "Isolation": "hyperv",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": null,
+            "ReadonlyPaths": null
+        },
+        "GraphDriver": {
+            "Data": {
+                "dir": "C:\\ProgramData\\Docker\\windowsfilter\\d12888f7813d74fe4e80e94bd39f1f997dab623f3c21cb97b95da58020fbb3f4"
+            },
+            "Name": "windowsfilter"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "d12888f7813d",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "4545/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "DOTNET_RUNNING_IN_CONTAINER=true",
+                "COMPLUS_NGenProtectedProcess_FeatureEnabled=0"
+            ],
+            "Cmd": [
+                "-p",
+                "4545:4545",
+                "-d"
+            ],
+            "Image": "test:v1.1",
+            "Volumes": null,
+            "WorkingDir": "C:\\app",
+            "Entrypoint": [
+                "ServerApplication.exe"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "d12888f7813d74fe4e80e94bd39f1f997dab623f3c21cb97b95da58020fbb3f4",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "4545/tcp": null
+            },
+            "SandboxKey": "d12888f7813d74fe4e80e94bd39f1f997dab623f3c21cb97b95da58020fbb3f4",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "nat": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "c7faf0f9eedefb1bc0968354273b01ba07769a6ad4fa99d4095eab62b08cb8b9",
+                    "EndpointID": "968d0edc8707fe0d76ef5416ac3a31c3185f0a6b8430871f237a15e5ae9cbfcb",
+                    "Gateway": "172.20.112.1",
+                    "IPAddress": "172.20.124.170",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "00:15:5d:59:5d:d7",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]

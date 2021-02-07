@@ -1,0 +1,9 @@
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\obj\Debug\ClientApplication.csproj.CoreCompileInputs.cache
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\bin\Debug\ClientApplication.exe.config
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\bin\Debug\ClientApplication.exe
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\bin\Debug\ClientApplication.pdb
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\bin\Debug\ProxyLibrary.dll
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\bin\Debug\ProxyLibrary.pdb
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\obj\Debug\ClientApplication.csproj.CopyComplete
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\obj\Debug\ClientApplication.exe
+C:\Users\dyang\source\repos\ClientApplication\ClientApplication\obj\Debug\ClientApplication.pdb

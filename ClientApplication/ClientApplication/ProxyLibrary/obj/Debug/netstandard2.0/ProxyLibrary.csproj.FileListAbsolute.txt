@@ -1,0 +1,9 @@
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\bin\Debug\netstandard2.0\ProxyLibrary.deps.json
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\bin\Debug\netstandard2.0\ProxyLibrary.dll
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\bin\Debug\netstandard2.0\ProxyLibrary.pdb
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\obj\Debug\netstandard2.0\ProxyLibrary.csprojAssemblyReference.cache
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\obj\Debug\netstandard2.0\ProxyLibrary.AssemblyInfoInputs.cache
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\obj\Debug\netstandard2.0\ProxyLibrary.AssemblyInfo.cs
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\obj\Debug\netstandard2.0\ProxyLibrary.csproj.CoreCompileInputs.cache
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\obj\Debug\netstandard2.0\ProxyLibrary.dll
+C:\Users\dyang\source\repos\ProxyLibrary\ProxyLibrary\obj\Debug\netstandard2.0\ProxyLibrary.pdb
