@@ -7,6 +7,9 @@
 - Create a secret called "mssql-secret". It has the variables "SA_PASSWORD" and "SERVICE_NAME"
 - Pull the windows server base and application images
 
+### How to deploy MS SQL on OCP
+[Reference Here](https://github.com/johwes/sqlworkshops-sqlonopenshift)
+
 ### Deploy the application
 Deploy the Remoting server
 ```
