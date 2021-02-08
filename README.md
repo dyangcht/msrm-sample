@@ -10,8 +10,17 @@
 - Create a secret called "mssql-secret". It has the variables "SA_PASSWORD" and "SERVICE_NAME"
 - Pull the windows server base and application images
 
-### How to deploy MS SQL on OCP
-[Reference Here](https://github.com/johwes/sqlworkshops-sqlonopenshift)
+#### RHEL-based SQL Server Image
+Create a SQL server template on OCP
+```
+oc create -f https://raw.githubusercontent.com/redhat-developer/s2i-dotnetcore-persistent-ex/dotnetcore-3.1-mssql/openshift/mssql2019.json
+oc process --parameters mssql2019  # I don't rune this
+```
+
+#### Create the SQL Server
+```
+oc new-app --template=mssql2019 -p ACCEPT_EULA=Y
+```
 
 ### Deploy the application
 Deploy the Remoting server
@@ -23,3 +32,7 @@ Deploy the Remoting client
 ```
 oc create -f msclient1.yaml
 ```
+
+
+### How to deploy MS SQL on OCP
+If you don't want to use template you can [reference here](https://github.com/johwes/sqlworkshops-sqlonopenshift) from scratch
