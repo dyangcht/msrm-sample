@@ -1,6 +1,9 @@
 # Microsoft .NET Framework Remoting Service Sample
 ## Deploy to OpenShift Container Platform 4.6 with Windows Container
 
+### OpenShift Blogs
+[Using Microsoft SQL Server on Red Hat OpenShift](https://developers.redhat.com/blog/2020/10/27/using-microsoft-sql-server-on-red-hat-openshift/)
+
 ### Prerequisites
 - Create a new project called "mssqldemo"
 - Deploy the MSSQL Server 2019 to this project
