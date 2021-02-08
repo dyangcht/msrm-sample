@@ -10,19 +10,41 @@
 - Create a secret called "mssql-secret". It has the variables "SA_PASSWORD" and "SERVICE_NAME"
 - Pull the windows server base and application images
 
-#### RHEL-based SQL Server Image
+### RHEL-based SQL Server Image
 Create a SQL server template on OCP
 ```
 oc create -f https://raw.githubusercontent.com/redhat-developer/s2i-dotnetcore-persistent-ex/dotnetcore-3.1-mssql/openshift/mssql2019.json
 oc process --parameters mssql2019  # I don't rune this
 ```
 
-#### Create the SQL Server
+### Create the SQL Server
 ```
 oc new-app --template=mssql2019 -p ACCEPT_EULA=Y
 ```
 
-### Deploy the application
+### Deploy .NET Core Image Streams
+Check the .NET Core 3.1
+```
+oc get is dotnet
+oc describe is dotnet
+```
+It's not listed
+Deploy them
+```
+oc create -f https://raw.githubusercontent.com/redhat-developer/s2i-dotnetcore/master/dotnet_imagestreams.json
+```
+Deploy .NET Core 3.1 application and test it
+```
+oc new-app dotnet:3.1~https://github.com/redhat-developer/s2i-dotnetcore-persistent-ex#dotnetcore-3.1-mssql --context-dir app --as-deployment-config
+oc expose service s2i-dotnetcore-persistent-ex
+oc get route
+```
+Connect to MS SQL Server, before do this, the application generates the records in memory only
+```
+oc set env --from=secret/mssql-secret dc/s2i-dotnetcore-persistent-ex --prefix=MSSQL_
+```
+
+### Deploy the .NET framework application
 Deploy the Remoting server
 ```
 oc create -f msserver1.yaml
