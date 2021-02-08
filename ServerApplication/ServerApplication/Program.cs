@@ -31,7 +31,7 @@ namespace ServerApplication
                     Console.WriteLine("OPEN NULL VALUE =====================");  
                     return;  
                 }
-                Console.WriteLine("EXECUTING .. " + sqlCmd);
+                Console.WriteLine("EXECUTING ... " + sqlCmd);
                 SqlCommand myCmd = new SqlCommand(sqlCmd);
                 if (myCmd == null) {
                     Console.WriteLine("NULL VALUE...");
@@ -39,10 +39,11 @@ namespace ServerApplication
                     myCmd.Connection = myConnection;
                     myCmd.ExecuteNonQuery();
                     myReader = myCmd.ExecuteReader();
-                    if (!myReader.Read()) {  
-                        myReader.Close();  
-                        //return "";  
+                    if (!myReader.Read()) {
+                        myReader.Close();
+                        //return "";
                     }
+
                     int nCol = myReader.FieldCount;
                     string outstr = "";
                     object[] values = new Object[nCol];
@@ -52,12 +53,25 @@ namespace ServerApplication
                         coldata = coldata.TrimEnd();
                         outstr += coldata + ",";
                     }
+                    whiel(myReader.Read()) {
+                        getSingleRow((IDataRecord)myReader, nCol);
+                    }
                     Console.WriteLine("Result: "+ outstr);
                 }
             } catch (Exception es) {  
                 Console.WriteLine("[Error WITH DB CONNECT...] " + es.Message);  
             }
         }   // getData()
+        public void getSingleRow(IDataRecord record, int fieldCount) {
+            string outstr = "";
+            for (int i = 0; i < fieldCount; i++) {
+                string coldata = record[i].ToString();
+                coldata = coldata.TrimEnd();
+                outstr += coldata + ",";
+            }
+            Console.WriteLine("Result: "+ outstr);
+            // Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
+        }
     }
     class Server
     {
