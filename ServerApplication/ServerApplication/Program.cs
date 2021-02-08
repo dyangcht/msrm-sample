@@ -11,21 +11,13 @@ using System.Data.SqlClient;
 
 namespace ServerApplication
 {
-    class Server
-    {
-        // private static readonly AutoResetEvent autoRestEvent = new AutoResetEvent(false);
-        // private static readonly Service _service = new Service();
+    public class CustomerServer {
+        private SqlConnection myConnection = null;
+        private SqlDataReader myReader;
+        
+        public CustomerServer() {}  // Constructor
 
-        private static SqlConnection myConnection = null;
-        private static SqlDataReader myReader;
-        public static void Main()
-        {
-            // _service.OnMessageRecieved = OnMessage_Received;
-            // _service.StartReceiving();
-            HttpChannel http = new HttpChannel(4545);
-            ChannelServices.RegisterChannel(http, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(Proxy), "pass123", WellKnownObjectMode.Singleton);
-
+        public void getData() {
             // Connect to MSSQL
             String userid = "sa";
             String password = "aA1TSgofwYA";
@@ -65,7 +57,24 @@ namespace ServerApplication
             } catch (Exception es) {  
                 Console.WriteLine("[Error WITH DB CONNECT...] " + es.Message);  
             }
+        }   // getData()
+    }
+    class Server
+    {
+        // private static readonly AutoResetEvent autoRestEvent = new AutoResetEvent(false);
+        // private static readonly Service _service = new Service();
 
+        public static void Main()
+        {
+            // _service.OnMessageRecieved = OnMessage_Received;
+            // _service.StartReceiving();
+            HttpChannel http = new HttpChannel(4545);
+            ChannelServices.RegisterChannel(http, false);
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(Proxy), "pass123", WellKnownObjectMode.Singleton);
+            // Connect to MSSQL and getData
+            CustomerServer cs = new CustomerServer();
+            cs.getData();
+            
             Console.WriteLine("Server is activate");
             Console.Read();
             Thread.Sleep(Timeout.Infinite);
