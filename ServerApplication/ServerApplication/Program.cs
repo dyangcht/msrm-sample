@@ -8,26 +8,15 @@ using System.Threading;
 
 // MSSQL
 using System.Data.SqlClient;
-using System.Collections;
 
 namespace ServerApplication
 {
     public class CustomerServer {
         private SqlConnection myConnection = null;
         private SqlDataReader myReader;
+        
+        public CustomerServer() {}  // Constructor
 
-        public CustomerServer(
-       ) {}  // Constructor
-
-        public void logOut()
-        {
-            Console.WriteLine("GetEnvironmentVariables: ");
-            IDictionary environmentVariables = Environment.GetEnvironmentVariables();
-            foreach (DictionaryEntry de in environmentVariables)
-            {
-                Console.WriteLine("  {0} = {1}", de.Key, de.Value);
-            }
-        }
         public void getData() {
             // Connect to MSSQL
             String userid = "sa";
@@ -35,7 +24,6 @@ namespace ServerApplication
             String server = "mssql.mssqldemo.svc.cluster.local";
             String sqlCmd = "select Id, Name from Customers";
             try {
-                logOut();
                 string myConnectString = "user id=" + userid + ";password=" + password + ";Database=myContacts;Server=" + server + ";Connect Timeout=30";
                 myConnection = new SqlConnection(myConnectString);
                 myConnection.Open();
@@ -57,7 +45,10 @@ namespace ServerApplication
                     }
 
                     int nCol = myReader.FieldCount;
-                    // while ((int r = myReader.NextResult()) != null) { }
+                    whiel(myReader.Read()) {
+                        getSingleRow((IDataRecord)myReader, nCol);
+                    }
+                    /*
                     string outstr = "";
                     object[] values = new Object[nCol];
                     myReader.GetValues(values);
@@ -66,15 +57,14 @@ namespace ServerApplication
                         coldata = coldata.TrimEnd();
                         outstr += coldata + ",";
                     }
-                    whiel(myReader.Read()) {
-                        getSingleRow((IDataRecord)myReader, nCol);
-                    }
                     Console.WriteLine("Result: "+ outstr);
+                    */
                 }
             } catch (Exception es) {  
                 Console.WriteLine("[Error WITH DB CONNECT...] " + es.Message);  
             }
         }   // getData()
+
         public void getSingleRow(IDataRecord record, int fieldCount) {
             string outstr = "";
             for (int i = 0; i < fieldCount; i++) {
