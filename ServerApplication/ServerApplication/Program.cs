@@ -35,7 +35,10 @@ namespace ServerApplication
             String sqlCmd = "select Id, Name from Customers";
             logOut();
             String passwords = Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD");
-            Console.WriteLine("SA PASSWORD: " + passwords + " ...");
+            if (String.IsNullOrEmpty(passwords)) {
+                Console.WriteLine("SA PASSWORD is empty or NULL ...");
+            } else
+                Console.WriteLine("SA PASSWORD: " + passwords + " ...");
             try {
                 string myConnectString = "user id=" + userid + ";password=" + password + ";Database=myContacts;Server=" + server + ";Connect Timeout=30";
                 myConnection = new SqlConnection(myConnectString);
