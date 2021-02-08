@@ -76,6 +76,10 @@ Deploy the Remoting server
 ```
 oc create -f msserver1.yaml
 ```
+Connect to MSSQL Server
+```
+oc set env --from=secret/mssql-secret deployments/msserver1 --prefix=MSSQL_
+```
 
 Deploy the Remoting client
 ```
