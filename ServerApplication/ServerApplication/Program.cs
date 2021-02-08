@@ -35,10 +35,24 @@ namespace ServerApplication
             String sqlCmd = "select Id, Name from Customers";
             logOut();
             String passwords = Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD");
-            if (String.IsNullOrEmpty(passwords)) {
+            server = Environment.GetEnvironmentVariable("MSSQL_SERVICE_NAME"); ;
+            if (String.IsNullOrEmpty(passwords))
+            {
                 Console.WriteLine("SA PASSWORD is empty or NULL ...");
-            } else
+            }
+            else
+            {
                 Console.WriteLine("SA PASSWORD: " + passwords + " ...");
+                password = passwords;
+            }
+            if (String.IsNullOrEmpty(server))
+            {
+                Console.WriteLine("Service is empty or NULL, set to default value");
+                server = "mssql.mssqldemo.svc.cluster.local";
+            } else
+            {
+                Console.WriteLine("Service name is " + server + " ...");
+            }
             try {
                 string myConnectString = "user id=" + userid + ";password=" + password + ";Database=myContacts;Server=" + server + ";Connect Timeout=30";
                 myConnection = new SqlConnection(myConnectString);
