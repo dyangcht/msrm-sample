@@ -34,6 +34,8 @@ namespace ServerApplication
             String server = "mssql.mssqldemo.svc.cluster.local";
             String sqlCmd = "select Id, Name from Customers";
             logOut();
+            String passwords = Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD");
+            Console.WriteLine("SA PASSWORD: " + password2 + " ...");
             try {
                 string myConnectString = "user id=" + userid + ";password=" + password + ";Database=myContacts;Server=" + server + ";Connect Timeout=30";
                 myConnection = new SqlConnection(myConnectString);
