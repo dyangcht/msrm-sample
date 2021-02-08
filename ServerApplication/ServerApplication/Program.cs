@@ -33,7 +33,7 @@ namespace ServerApplication
             String password = "aA1TSgofwYA";
             String server = "mssql.mssqldemo.svc.cluster.local";
             String sqlCmd = "select Id, Name from Customers";
-            logOut();
+            // logOut();
             String passwords = Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD");
             server = Environment.GetEnvironmentVariable("MSSQL_SERVICE_NAME"); ;
             if (String.IsNullOrEmpty(passwords))
