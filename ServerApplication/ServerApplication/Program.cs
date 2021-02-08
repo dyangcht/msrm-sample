@@ -8,6 +8,7 @@ using System.Threading;
 
 // MSSQL
 using System.Data.SqlClient;
+using System.Data;
 
 namespace ServerApplication
 {
@@ -45,7 +46,7 @@ namespace ServerApplication
                     }
 
                     int nCol = myReader.FieldCount;
-                    whiel(myReader.Read()) {
+                    while(myReader.Read()) {
                         getSingleRow((IDataRecord)myReader, nCol);
                     }
                     /*
