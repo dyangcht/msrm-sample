@@ -44,6 +44,27 @@ Connect to MS SQL Server, before do this, the application generates the records 
 oc set env --from=secret/mssql-secret dc/s2i-dotnetcore-persistent-ex --prefix=MSSQL_
 ```
 
+## Download the images to Windows worker node
+First, get the windows worker node name
+```
+oc get nodes -l kubernetes.io/os=windows
+```
+Then log into the working pod
+```
+oc -n openshift-windows-machine-config-operator rsh $(oc get pods -n openshift-windows-machine-config-operator -l app=winc-ssh -o name)
+```
+Log into the Windows
+```
+sshcmd.sh ip-10-0-155-23.us-east-2.compute.internal
+```
+It should drop you into PowerShell as below
+```
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Administrator>
+```
+
 ### Deploy the .NET framework application
 Deploy the Remoting server
 ```
