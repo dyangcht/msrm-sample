@@ -64,6 +64,12 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 PS C:\Users\Administrator>
 ```
+Download the relative images
+```
+docker pull mcr.microsoft.com/windows/servercore:ltsc2019
+docker pull dyangcht/msserver1
+docker pull dyangcht/msclient1
+```
 
 ### Deploy the .NET framework application
 Deploy the Remoting server
