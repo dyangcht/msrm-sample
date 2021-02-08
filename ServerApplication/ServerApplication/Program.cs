@@ -17,13 +17,22 @@ namespace ServerApplication
         private SqlDataReader myReader;
         
         public CustomerServer() {}  // Constructor
-
+        public void logOut()
+        {
+            Console.WriteLine("GetEnvironmentVariables: ");
+            IDictionary environmentVariables = Environment.GetEnvironmentVariables();
+            foreach (DictionaryEntry de in environmentVariables)
+            {
+                Console.WriteLine("  {0} = {1}", de.Key, de.Value);
+            }
+        }
         public void getData() {
             // Connect to MSSQL
             String userid = "sa";
             String password = "aA1TSgofwYA";
             String server = "mssql.mssqldemo.svc.cluster.local";
             String sqlCmd = "select Id, Name from Customers";
+            logOut();
             try {
                 string myConnectString = "user id=" + userid + ";password=" + password + ";Database=myContacts;Server=" + server + ";Connect Timeout=30";
                 myConnection = new SqlConnection(myConnectString);
