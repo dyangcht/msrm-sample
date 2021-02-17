@@ -35,7 +35,7 @@ namespace ServerApplication
             String sqlCmd = "select Id, Name from Customers";
             // logOut();
             String passwords = Environment.GetEnvironmentVariable("MSSQL_SA_PASSWORD");
-            server = Environment.GetEnvironmentVariable("MSSQL_SERVICE_NAME"); ;
+            server = Environment.GetEnvironmentVariable("MSSQL_SERVICE_NAME");
             if (String.IsNullOrEmpty(passwords))
             {
                 Console.WriteLine("SA PASSWORD is empty or NULL ...");
@@ -75,7 +75,9 @@ namespace ServerApplication
                     }
 
                     int nCol = myReader.FieldCount;
-                    while(myReader.Read()) {
+                    // first
+                    getSingleRow((IDataRecord)myReader, nCol);
+                    while (myReader.Read()) {
                         getSingleRow((IDataRecord)myReader, nCol);
                     }
                     /*
