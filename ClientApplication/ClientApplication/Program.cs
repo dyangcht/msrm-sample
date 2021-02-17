@@ -32,7 +32,7 @@ namespace ClientApplication
                 // int result = pr.square(getvalue);
                 int result = pr.square(10);
                 Console.WriteLine("Square is: " + result);
-                result = pr.calculator(5, 6, 2);
+                result = pr.calculator(7, 6, 2);
                 Console.WriteLine("Square is: " + result);
             }
             // Standard console application and wait for input
