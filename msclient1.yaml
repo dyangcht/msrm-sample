@@ -22,7 +22,7 @@ spec:
         Effect: "NoSchedule"
       containers:
       - name: windowswebserver
-        image: dyangcht/msclient1:latest
+        image: dyangcht/msclient1:v1809
         imagePullPolicy: IfNotPresent
         # command:
         # - powershell.exe
