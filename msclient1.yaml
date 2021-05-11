@@ -23,7 +23,7 @@ spec:
       containers:
       - name: windowswebserver
         image: dyangcht/msclient1:v1809
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         # command:
         # - powershell.exe
         # - -command
